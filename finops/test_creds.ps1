@@ -1,7 +1,6 @@
 <# 
 AWS SSO Login is required to run this script from a local dev environment.
 example:  aws sso login --profile us-2931
-
 #>
 
 Write-Host "Enter the number of the report you wish to run." -ForegroundColor DarkBlue
@@ -46,9 +45,11 @@ switch ($input)
         $cred_profile = "eu-3221"
     }
 }
+<#
 Write-Host "You selected region:" -ForegroundColor Yellow 
 Write-host $region -ForegroundColor Cyan
 Write-Host "Using credential profile:" -ForegroundColor Yellow
 Write-Host $cred_profile -ForegroundColor Cyan
 Write-Host "for report name: " -ForegroundColor Yellow
 Write-Host $report_name -ForegroundColor Cyan
+#>

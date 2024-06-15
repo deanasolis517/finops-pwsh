@@ -1,5 +1,5 @@
 # Name: get_rds.ps1
-# Custom output RDS statistics for PBI COGS dashboard
+# Custom output RDS statistics for COGS dashboard
 
 class output_rds
 {
