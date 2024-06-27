@@ -5,7 +5,7 @@ example:  aws sso login --profile us-2931
 
 Write-Host "Enter the number of the report you wish to run." -ForegroundColor DarkBlue
 
-$input = Read-Host "1: prod-us-e1  2: nam-us-e1  3: ap-se  4: eu-w  5: eu-c1  6: eu-c2"
+$input = Read-Host "1: prod-us-e1  2: nam-us-e1  3: ap-se1  4: eu-w2  5: eu-c1  6: eu-c2"
 switch ($input) 
 {
 1 {
@@ -21,11 +21,12 @@ switch ($input)
 3 { 
     $region = "ap-southeast-1" 
     $report_name = "ap-southeast-1" 
-    $cred_profile = "ap-0822"}
+    $cred_profile = "ap-0822"
+}
 4 { 
-    $region = "eu-west-1"
-    $report_name = "eu-west-1"
-    $cred_profile = "eu-5753-"  
+    $region = "eu-west-2"
+    $report_name = "eu-west-2"
+    $cred_profile = "eu-5753"  
 }
 5 { 
     $region = "eu-central-1"
@@ -45,11 +46,10 @@ switch ($input)
         $cred_profile = "eu-3221"
     }
 }
-<#
+
 Write-Host "You selected region:" -ForegroundColor Yellow 
 Write-host $region -ForegroundColor Cyan
 Write-Host "Using credential profile:" -ForegroundColor Yellow
 Write-Host $cred_profile -ForegroundColor Cyan
 Write-Host "for report name: " -ForegroundColor Yellow
 Write-Host $report_name -ForegroundColor Cyan
-#>
