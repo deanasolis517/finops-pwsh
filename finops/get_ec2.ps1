@@ -119,4 +119,4 @@ ForEach($all_ec2a in $all_ec2s)
 }
 $out_date = Get-Date -Format "yyyy-MM-dd_HH_mm_ss"
 $out_ec2s | Select-Object | ft
-$out_ec2s | Select-Object | Export-Csv -NoTypeInformation -Path "./output/aws_ec2_inventory_$($out_date)_$($report_name).csv"
+$out_ec2s | Select-Object | Export-Csv -NoTypeInformation -Path "../../output/aws_ec2_inventory_$($out_date)_$($report_name).csv"
