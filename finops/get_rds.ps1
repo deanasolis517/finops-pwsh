@@ -48,7 +48,7 @@ end test#>
 <#begin test end test#>
 Write-Host "Enter the number of the report you wish to run." -ForegroundColor DarkBlue
 
-$input = Read-Host "1: prod-us-e1  2: nam-us-e1  3: ap-se  4: eu-w  5: eu-c1  6: eu-c2"
+$input = Read-Host "1: prod-us-e1  2: nam-us-e1  3: ap-se1  4: eu-w2  5: eu-c1  6: eu-c2"
 switch ($input) 
 {
 1 {
@@ -64,11 +64,12 @@ switch ($input)
 3 { 
     $region = "ap-southeast-1" 
     $report_name = "ap-southeast-1" 
-    $cred_profile = "ap-0822"}
+    $cred_profile = "ap-0822"
+}
 4 { 
-    $region = "eu-west-1"
-    $report_name = "eu-west-1"
-    $cred_profile = "eu-5753-"  
+    $region = "eu-west-2"
+    $report_name = "eu-west-2"
+    $cred_profile = "eu-5753"  
 }
 5 { 
     $region = "eu-central-1"

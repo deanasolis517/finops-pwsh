@@ -2,11 +2,11 @@
 # COMMENT: Gets AWS ec2 inventory
 #  Module Initialization
 # Check that we're in PowerSell 5.0 or better
-If($psversiontable.psversion.major -lt 5)
-{
-	Write-Host -ForegroundColor Red "This script requires PowerShell 5.0 or higher. Fix that and try agin."
-	Exit
-}
+# If($psversiontable.psversion.major -lt 5)
+# {
+# 	Write-Host -ForegroundColor Red "This script requires PowerShell 5.0 or higher. Fix that and try agin."
+# 	Exit
+# }
 
 class output_ec2
 {
