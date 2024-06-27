@@ -1,12 +1,6 @@
 # NAME: get_ec2.ps1
 # COMMENT: Gets AWS ec2 inventory
 #  Module Initialization
-# Check that we're in PowerSell 5.0 or better
-# If($psversiontable.psversion.major -lt 5)
-# {
-# 	Write-Host -ForegroundColor Red "This script requires PowerShell 5.0 or higher. Fix that and try agin."
-# 	Exit
-# }
 
 class output_ec2
 {
@@ -40,12 +34,58 @@ class output_ec2
     [float] $disk_2_iops = 0
     [float] $disk_2_throughput = 0
 }
-
+<#
 $report_name = Read-Host 'enter report name'
 $report_name
 $region = Read-Host 'enter region'
 Set-DefaultAWSRegion $region
 $cred_profile = Read-Host 'enter profile'
+#>
+
+Write-Host "Enter the number of the report you wish to run." -ForegroundColor DarkBlue
+
+$input = Read-Host "1: prod-us-e1  2: nam-us-e1  3: ap-se1  4: eu-w2  5: eu-c1  6: eu-c2"
+switch ($input) 
+{
+1 {
+    $region = "us-east-1"
+    $report_name = "prod"
+    $cred_profile = "us-2431"  
+}
+2 { 
+    $region = "us-east-1"
+    $report_name = "us-east-1"
+    $cred_profile = "us-7493"  
+}
+3 { 
+    $region = "ap-southeast-1" 
+    $report_name = "ap-southeast-1" 
+    $cred_profile = "ap-0822"
+}
+4 { 
+    $region = "eu-west-2"
+    $report_name = "eu-west-2"
+    $cred_profile = "eu-5753"  
+}
+5 { 
+    $region = "eu-central-1"
+    $report_name = "eu-central-1"
+    $cred_profile = "eu-8417"  
+}
+6 { 
+    $region = "eu-central-2"
+    $report_name = "eu-central-2"
+    $cred_profile = "eu-3221"  
+}
+
+    Default 
+    {
+        $region = "eu-central-2"
+        $report_name = "eu-central-2"
+        $cred_profile = "eu-3221"
+    }
+}
+Set-DefaultAWSRegion $region
 
 #  Connect to all hosts
 
